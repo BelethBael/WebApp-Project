@@ -1,0 +1,77 @@
+.main-check{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+}
+
+.top-checkout{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 50px;
+    /* background-color: aqua; */
+}
+
+.logo-checkout{
+
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 15%;
+    font-size: 80px;
+}
+
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    font-size: 48px;
+}
+
+.input-checkout{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* margin: 20px; */
+    padding: 50px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color: #00013A;
+    /* padding-bottom: 30px; */
+    margin-bottom: 30px;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.input-field{
+    font-size: 16;
+    color: "white";
+    height: 30px;
+}
+
+.place-order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #06D6A0;
+    height: 50px;
+    width: 300px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+.show-price-items{
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.blank{
+    width: 15%;
+}

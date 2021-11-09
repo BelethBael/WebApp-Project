@@ -1,0 +1,29 @@
+.mainBottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00013A;
+    width: 100%;
+    padding: 100px;
+}
+.head-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+    width: 80%;
+    /* background-color: tomato; */
+
+}
+.icon-socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 30%;
+    /* background-color: yellowgreen; */
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    /* padding-right: 100px; */
+}
