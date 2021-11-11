@@ -25,16 +25,6 @@ app.get('/showdata', (req,res) => {
     })
 })
 
-// email: ""
-// id: 6650
-// img: "https://cdn.discordapp.com/attachments/381078258562760716/907145514787692594/elden-ring-pc-game-steam-cover.png"
-// invoiceID: "331450"
-// name: "ELDEN RING"
-// platform: "STEAM"
-// price: 1499
-// quantity: 2
-// region: "WORLDWIDE"
-
 app.post('/create_invoice', (req, res) => {
     const data = req.body;
     // console.log(data);

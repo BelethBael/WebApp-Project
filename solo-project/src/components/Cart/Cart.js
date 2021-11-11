@@ -19,47 +19,7 @@ class Cart extends React.Component{
         }
     }
 
-    // addNewProduct =()=> {
-    //     let num = Math.floor(Math.random() * 5);
-
-    //     if(this.state.cart.length == 0){
-    //         this.state.items[num].quantity = 1
-    //         this.setState({
-    //             cart:this.state.cart.concat(this.state.items[num])
-    //         })
-
-    //     }
-    //     else{
-    //         let check = false
-    //         let numCheck = 0
-    //         for(let i = 0; i<this.state.cart.length; i++){
-    //                 // console.log(this.state.cart[i])
-    //                 // console.log(this.state.items[num])
-    //                 if(this.state.cart[i].id == this.state.items[num].id){
-    //                     check = true
-    //                     numCheck = i
-    //                     break
-    //                 }
-
-    //         }
-    //         if(check == true){
-    //             let data = this.state.cart
-    //             data[numCheck].quantity += 1
-    //             this.setState({cart:data})
-    //         }
-    //         else{
-    //             // console.log(this.state.items[num])
-    //             this.state.items[num].quantity = 1
-    //             this.setState({cart:this.state.cart.concat(this.state.items[num])})
-    //         }
-    //     }
-    // }
-
     clearItems =()=> {
-        // this.setState({cart:[]})
-        // for(let i = 0; i<this.state.items; i++){
-        //     this.state.items[i].quantity = 1
-        // }
 
         this.props.clearCart()
         this.forceUpdate()
@@ -69,22 +29,6 @@ class Cart extends React.Component{
         // console.log("Item want to deleth: "+id)
         this.props.delethItemCart(id)
         this.forceUpdate()
-        // for(let i = 0; i<this.state.cart.length; i++){
-        //     if(this.state.cart[i].id == id){
-        //         let data = this.state.cart
-        //         data[i].quantity -= 1
-
-        //         if(data[i].quantity == 0){
-        //             console.log("quan0")
-        //             data.splice(i,1)
-        //             this.setState({cart:data})
-        //         }
-        //         else{
-        //             this.setState({cart:data})
-        //         }
-        //         break
-        //     }
-        // }
     }
 
     goCheckout =()=> {
