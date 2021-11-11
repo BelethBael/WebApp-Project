@@ -4,9 +4,12 @@ import { ImBin } from 'react-icons/im'
 // import Input from '@mui/material/Input';
 // import { Box } from "@mui/system";
 
+import { withRouter } from "../withRouter/withRouter";
 import { connect } from 'react-redux';
-
 import './Checkout.css'
+
+import Swal from 'sweetalert2'
+// import 'sweetalert2/src/sweetalert2.scss'
 
 class Checkout extends React.Component {
     constructor(props) {
@@ -60,27 +63,38 @@ class Checkout extends React.Component {
         }
         console.log(data)
 
-        // POST data to back-end server
+        Swal.fire({
+            title:'Complete your order!',
+            text:'click to go back',
+            icon:'success'
 
-        const recipeUrl = 'http://localhost:3001/create_invoice';
+        }).then((()=>{
+            console.log("ASD");
+            this.props.history("/")
+            // this.props.history("/checkout")
+        }))
 
-        const requestMetadata = {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-          };
+        // ----------------------- POST data to back-end server ----------------------- //
 
-          fetch(recipeUrl, requestMetadata)
-            .then(res => res.json())
-            .then(recipes => {
-              console.log("Success: " + recipes)
-              // this.setState({ recipes });
-            })
-            .catch(error => {
-              console.log(error)
-            })
+        // const recipeUrl = 'http://localhost:3001/create_invoice';
+
+        // const requestMetadata = {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        //   };
+
+        //   fetch(recipeUrl, requestMetadata)
+        //     .then(res => res.json())
+        //     .then(recipes => {
+        //       console.log("Success: " + recipes)
+        //       // this.setState({ recipes });
+        //     })
+        //     .catch(error => {
+        //       console.log(error)
+        //     })
     }
 
     render() {
@@ -193,4 +207,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(Checkout)
+export default withRouter(connect(mapStateToProps)(Checkout))

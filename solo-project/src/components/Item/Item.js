@@ -11,6 +11,7 @@ import {AiFillHeart} from 'react-icons/ai'
 import { withRouter } from "../withRouter/withRouter";
 
 import { connect } from "react-redux";
+import { addCart } from '../../redux/actions/cart'
 
 class Item extends React.Component {
     constructor(props) {
@@ -22,8 +23,20 @@ class Item extends React.Component {
         }
     }
 
-    handleAddcart =()=> {
-        console.log("click");
+    addCart = (id) => {
+        console.log("Add cart: " + id)
+
+        let data = []
+        for (let i = 0; i < this.props.itemData.length; i++) {
+            // console.log(id)
+            if (id == this.props.itemData[i].id) {
+                // console.log(this.props.itemData[i]);
+                this.props.updateCart(this.props.itemData[i])
+                break
+
+            }
+        }
+
     }
 
     componentDidMount(){
@@ -104,7 +117,7 @@ class Item extends React.Component {
                                 <div
                                 style={{width:'200px',height:"50px", }}
                                 className="buy-but"
-                                onClick={this.handleAddcart}>BUY</div>
+                                onClick={()=>this.addCart(this.state.itemSelectedID)}>BUY</div>
                             </div>
 
                         </div>
@@ -119,8 +132,15 @@ class Item extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-      itemData: state.itemReducer.data,
+        itemData: state.itemReducer.data,
+        cartData: state.cartReducer.data
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      updateCart: (data) => dispatch(addCart(data)),
     };
   };
 
-export default withRouter(connect(mapStateToProps)(Item));
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Item));

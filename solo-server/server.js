@@ -33,7 +33,7 @@ app.get('/showdata', (req,res) => {
 // platform: "STEAM"
 // price: 1499
 // quantity: 2
-region: "WORLDWIDE"
+// region: "WORLDWIDE"
 
 app.post('/create_invoice', (req, res) => {
     const data = req.body;

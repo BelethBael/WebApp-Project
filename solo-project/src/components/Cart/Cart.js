@@ -2,6 +2,8 @@ import './Cart.css'
 import React from 'react'
 import {ImBin} from 'react-icons/im'
 
+import Swal from 'sweetalert2'
+
 import { withRouter } from '../withRouter/withRouter';
 
 import { connect } from 'react-redux';
@@ -88,6 +90,12 @@ class Cart extends React.Component{
     goCheckout =()=> {
         if(this.props.cartData.length != 0){
             this.props.history("/checkout")
+        }
+        else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Cart is empty',
+              })
         }
     }
 
